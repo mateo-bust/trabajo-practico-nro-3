@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Gestión de Vuelos</title>
+  </head>
+  <body>
+    <header>
+      <h2>Gestión de Vuelos</h2>
+    </header>
+
+    <nav>
+      • <a href="#">Registrar Usuario</a> &nbsp; •
+      <a href="#">Consultar vuelos disponibles/reservar</a> &nbsp; •
+      <a href="#">Ver reservas realizadas</a> &nbsp; •
+      <a href="#">Eliminar reservas realizadas</a>
+    </nav>
+
+    <form id="formReservas" class="container my-4">
+      <div class="mb-3">
+        <label for="origen" class="form-label">Origen</label>
+        <select class="form-select" id="origen" required>
+          <option value="Cordoba">Córdoba</option>
+          <option value="Mendoza">Mendoza</option>
+          <option value="Tucuman">Tucumán</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="destino" class="form-label">Destino</label>
+        <select class="form-select" id="destino" required>
+          <option value="Cordoba">Córdoba</option>
+          <option value="Mendoza">Mendoza</option>
+          <option value="Tucuman">Tucumán</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha de Vuelo</label>
+        <input type="date" class="form-control" id="fecha" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="hora" class="form-label">Hora de Vuelo</label>
+        <input type="time" class="form-control" id="hora" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="clase" class="form-label">Selección de Clase</label>
+        <select class="form-select" id="clase">
+          <option value="Ejecutiva">Ejecutiva</option>
+          <option value="Economica">Económica</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="cantidad" class="form-label">Cantidad de Pasajes</label>
+        <input
+          type="number"
+          class="form-control"
+          id="cantidad"
+          min="1"
+          max="50"
+          required
+        />
+      </div>
+
+      <div id="contenedorPasajeros"></div>
+
+      <div class="d-flex gap-2 mt-3">
+        <button type="reset" class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
+      </div>
+    </form>
+
+    <div class="container my-4">
+      <h2>Reservas de Vuelos</h2>
+      <table class="table table-bordered" id="tablaReservas">
+        <thead class="table-light">
+          <tr>
+            <th>Nombre</th>
+            <th>DNI</th>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Clase</th>
+            <th>Ubicación</th>
+            <th>Nro Silla</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>Sitio Oficial de Compañía Argentina - 2025</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script-reservas.js"></script>
+  </body>
+</html>
